@@ -1,0 +1,16 @@
+<%- include('../Partials/header.ejs') %>
+<nav class="navbar navbard-expand-lg navbark-dark bg-primary">
+    <h1 class="text-center">Bem vindo a Sessão de Login de Vendedor</h1>
+</nav>
+<div class="container mt-3">
+    <form action="/autenticarVendedor" method="POST">
+        <label>Digite seu nome</label>
+        <input type="text" name="nome" placeholder="Digite seu nome" class="form-control"><br>
+        <label>Digite seu Email:</label>
+        <input name="email" type="email" placeholder="Digite seu email" class="form-control"><br>
+        <label>Digite sua Senha:</label>
+        <input type="password" name="password" placeholder="Digite sua Senha:" class="form-control"><br>
+        <button type="submit" class="btn btn-success btn-block"> Acessar Painel </button>
+    </form>
+</div>
+<%- include('../Partials/footer.ejs') %>

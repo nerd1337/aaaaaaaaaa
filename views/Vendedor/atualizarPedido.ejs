@@ -1,0 +1,21 @@
+<%- include('../Partials/header.ejs') %>
+<nav class="navbar navbard-expand-lg navbark-dark bg-primary">
+    <h1 class="text-center">Bem vindo a Sessão de Vendas</h1>
+</nav>
+<div class="container mt-3">
+    <form action="/venda" method="POST">
+        <input type="text" name="nomeCliente" value="<%=cliente.nomeCliente%>" readonly class="form-control"><br>
+        <input type="number" name="telefoneCliente" value="<%=cliente.telefone%>" readonly class="form-control"><br>
+        <select name="produtos" class="form-control">
+            <% produtos.forEach((produtos) => { %>
+                <option value="<%= produtos.id %>"> <%= produtos.nomeProduto %> - R$<%= produtos.preco %></option>
+            <% }) %>
+        </select><br>
+        <input type="number" name="quantidade" placeholder="Digite a quantidade" class="form-control"><br>
+        <button class="btn btn-primary"> Atualizar Pedido </button>
+    </form>
+</div>
+<script>
+
+</script>
+<%- include('../Partials/footer.ejs') %>

@@ -1,0 +1,40 @@
+<%- include('../Partials/header.ejs') %>
+<nav class="navbar navbard-expand-lg navbark-dark bg-primary">
+    <h1 class="text-center">Clientes</h1>
+</nav>    
+    <div class="container mt-3">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID: </th>
+                    <th>Nome Cliente</th>
+                    <th>Telefone Cliente</th>
+                    <th>Total a pagar</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% clientes.forEach((clientes) => { %>
+                    <% if (clientes.total > 1) { %> 
+                        <tr>
+                            <td> <%= clientes.id %> </td>
+                            <td> <%= clientes.nomeCliente %></td>
+                            <td> <%= clientes.telefone %> </td>
+                            <td> R$ <%= clientes.total %> </td>
+                            <td>
+                                <form action="/receberPagamento" method="POST" style="display: inline">
+                                    <input type="hidden" name="id" value="<%= clientes.id %>">
+                                    <button class="btn btn-primary"> Receber Pagamento </button>
+                                </form>
+                                <form action="/atualizarPedido" method="POST" style="display: inline">
+                                    <input type="hidden" name="id" value="<%= clientes.id %>">
+                                    <button class="btn btn-success"> Atualizar Carrinho </button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% } %>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+<%- include('../Partials/footer.ejs') %>

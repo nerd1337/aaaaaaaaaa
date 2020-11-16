@@ -1,0 +1,13 @@
+<%- include('../Partials/header.ejs') %>
+<nav class="navbar navbard-expand-lg navbark-dark bg-primary">
+    <h1 class="text-center">Bem vindo a Sessão de Atualizar Produto</h1>
+</nav>
+<div class="container mt-3">
+    <form action="/finalizarAtualizacao" method="POST">
+        <input type="text" name="nomeProduto" value="<%= produtos.nomeProduto%>" readonly class="form-control"><br>
+        <input type="number" name="novaQntd" class="form-control" placeholder="Digite a nova quantidade"><br>
+        <input type="hidden" name="id" valeu="<%= produtos.id %>">
+        <button class="btn btn-primary btn-block">Atualizar</button>
+    </form>
+</div>
+<%- include('../Partials/footer.ejs') %>

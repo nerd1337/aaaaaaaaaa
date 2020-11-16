@@ -1,0 +1,13 @@
+<%- include('../Partials/header.ejs') %>
+<nav class="navbar navbard-expand-lg navbark-dark bg-primary">
+    <h1 class="text-center">Bem vindo a Sessão de Cadastro de Produto</h1>
+</nav>
+<div class="container mt-3">
+    <form action="/newProduto" method="POST">
+        <input type="text" name="nomeProduto" placeholder="Digite o nome do produto" class="form-control"><br>
+        <input type="text" name="precoProduto" placeholder="Digite o preco do produto" class="form-control"><br>
+        <input type="number" name="quantidade" placeholder="Digite a quantidade de produtos disponiveis" class="form-control"><br>
+        <button type="submit" class="btn btn-success btn-block"> Cadastrar Produto </button>
+    </form>
+</div>
+<%- include('../Partials/footer.ejs') %>
